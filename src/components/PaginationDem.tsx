@@ -3,10 +3,7 @@ import {useState} from 'react'
 
 const PaginationDem = () => {
     const { currentPage, totalPages, goToPage, nextPage, prevPage, initialPage } = usePagination(100, 10)
-    function setItemsPerPage(arg0: number): void {
-        throw new Error('Function not implemented.')
-    }
-    const itemsPerPage = 10
+    const [itemsPerPage, setItemsPerPage] = useState(10)
 
     return (
         <div>
@@ -19,8 +16,6 @@ const PaginationDem = () => {
             <p>Items Per Page: 10 | Total Items: 100
 
             </p>
-            <input type="number" value={currentPage} onChange={(e) => goToPage(Number(e.target.value))} min={1} max={totalPages} />
-
             <div style={{ marginTop: '20px' }}>
                 <label htmlFor="pageInput">Items per page: </label>
                 <select id ="items-select" value = {itemsPerPage} onChange={(e) => setItemsPerPage(Number(e.target.value))}>
