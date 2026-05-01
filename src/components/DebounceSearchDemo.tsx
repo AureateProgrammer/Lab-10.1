@@ -29,12 +29,13 @@ export const DebounceSearchDemo = () => {
 
 
 
+
     return (
         <div>
             <h2>Debounce Search Demo</h2>
             <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search..." />
             <p>Debounced Search Term: {debouncedSearchTerm}</p>
-            
+
 
 
         </div>

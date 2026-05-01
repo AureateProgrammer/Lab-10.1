@@ -4,6 +4,7 @@ export const usePagination = (totalItems: number, itemsPerPage: number) => {
     const [currentPage, setCurrentPage] = useState(1)
     const totalPages = Math.ceil(totalItems / itemsPerPage)
 
+    
     const initialPage = () => {
         if (currentPage > 1) {
             setCurrentPage(1)
