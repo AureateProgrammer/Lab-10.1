@@ -5,7 +5,7 @@ export const usePagination = (totalItems: number, itemsPerPage: number) => {
     const totalPages = Math.ceil(totalItems / itemsPerPage)
 
     const initialPage = () => {
-        if (currentPage < 1) {
+        if (currentPage > 1) {
             setCurrentPage(1)
         } else if (currentPage > totalPages) {
             setCurrentPage(totalPages)
@@ -36,8 +36,17 @@ export const usePagination = (totalItems: number, itemsPerPage: number) => {
         }
     }, [totalItems, itemsPerPage, totalPages, currentPage])
 
+    const startIndex = (currentPage - 1) * itemsPerPage
+    const endIndex = Math.min(startIndex + itemsPerPage, totalItems)
+    const currentItems = Array.from({ length: endIndex - startIndex }, (_, i) => startIndex + i + 1)
+
+
 
     return {
+        startIndex,
+        endIndex,
+        currentItems,
+        initialPage,
         currentPage,
         totalPages, 
         goToPage,
