@@ -1,4 +1,5 @@
 import { usePagination } from '../hooks/usePagination'
+import {useState} from 'react'
 
 const PaginationDem = () => {
     const { currentPage, totalPages, goToPage, nextPage, prevPage, initialPage } = usePagination(100, 10)
