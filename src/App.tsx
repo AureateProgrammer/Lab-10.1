@@ -8,7 +8,8 @@ function App() {
   return (
     <>
     <div>
-      <PaginationDem />
+      <PaginationDem/>
+      <DebounceSearchDemo/>
     </div>
     </>
   )
